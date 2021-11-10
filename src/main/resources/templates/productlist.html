@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>sportshoes</title>
+</head>
+<body>
+
+		<form action="admin">
+<input type="submit" value="Home">     </form>
+	<div class="container">
+
+
+        <div th:if="${not #lists.isEmpty(products)}">
+            <h2>Product List</h2>
+
+            <table class="table table-stripped">
+                <tr>
+                    <th>Product_Id</th>
+                    <th>Product_Name</th>
+                    <th>Category</th>
+                    <th>Cost</th>
+
+                </tr>
+                <tr th:each="product : ${products}">
+                    <td th:text="${product.id}"></td>
+                    <td th:text="${product.productName}"></td>
+                    <td th:text="${product.category}"></td>
+                    <td th:text="${product.cost}"></td>
+
+                </tr>
+            </table>
+
+
+        </div>
+    </div>
+</body>
+</html>

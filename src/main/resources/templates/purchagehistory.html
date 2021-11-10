@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Sportyshoes</title>
+</head>
+<body>
+
+			<form action="admin">
+        <input type="submit" value="Home">     </form>
+
+	 <div class="container">
+
+
+        <div th:if="${not #lists.isEmpty(purchaseHistory)}">
+            <h2>Purchase History List</h2>
+
+            <table class="table table-stripped">
+                <tr>
+                    <th>id</th>
+                    <th>category</th>
+                    <th>product_id</th>
+                    <th>order_id</th>
+                    <th>cost</th>
+                    <th>total</th>
+                    <th>user_id</th>
+                    <th>product_name</th>
+                    <th>date</th>
+                </tr>
+                <tr th:each="purchaseHistories : ${purchaseHistory} " >
+                    <td th:text="${purchaseHistories.id}"></td>
+                    <td th:text="${purchaseHistories.category}"></td>
+                    <td th:text="${purchaseHistories.productId}"></td>
+                    <td th:text="${purchaseHistories.orderId}"></td>
+                    <td th:text="${purchaseHistories.cost}"></td>
+                    <td th:text="${purchaseHistories.total}"></td>
+                    <td th:text="${purchaseHistories.UserId}"></td>
+                    <td th:text="${purchaseHistories.productName}"></td>
+                    <td th:text="${purchaseHistories.date}"></td>
+
+
+
+                </tr>
+            </table>
+
+
+        </div>
+    </div>
+	
+</body>
+</html>
